@@ -11,11 +11,13 @@ jobs:
       - uses: actions/cache@v6
         with:
           path: |
+            ~/.cargo/.crates.toml
+            ~/.cargo/.crates2.json
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-          key: without-crates-toml-crates2-json
+          key: with-crates-toml-crates2-json
 
       - run: cargo install cargo-expand@1.0.125
 
@@ -28,10 +30,12 @@ jobs:
       - uses: actions/cache@v6
         with:
           path: |
+            ~/.cargo/.crates.toml
+            ~/.cargo/.crates2.json
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-          key: without-crates-toml-crates2-json
+          key: with-crates-toml-crates2-json
 
       - run: cargo install cargo-expand
